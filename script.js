@@ -14,6 +14,12 @@ function setBGToBody(){
 // Set initial background
 setBGToBody();
 
+function setSlideImage(){
+    slides.forEach(slide => slide.classList.remove('active'));
+
+    slides[activeSlide].classList.add('active');
+}
+
 // Swipe to right
 rightBtn.addEventListener('click', () => {
 
@@ -22,8 +28,8 @@ rightBtn.addEventListener('click', () => {
     }
 
     activeSlide++;
-    console.log(activeSlide);
     setBGToBody();
+    setSlideImage();
 });
 
 // Swipe to left
@@ -33,7 +39,6 @@ leftBtn.addEventListener('click', () => {
     }
 
     activeSlide--;
-    console.log(activeSlide);
     setBGToBody();
 
 });
